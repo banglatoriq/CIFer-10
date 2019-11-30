@@ -46,6 +46,15 @@ def load_train_data():
 		x_train[i]=img
 	return x_train, y_labels
 
+#data augmentation
+datagen = ImageDataGenerator(
+    rotation_range=15,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    horizontal_flip=True,
+    )
+datagen.fit(x_train)
+
 
 #loading test data
 def load_test_data():
